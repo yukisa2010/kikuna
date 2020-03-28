@@ -3,6 +3,11 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Third from '../views/Third.vue'
 import Forth from '../views/Forth.vue'
+import Fifth from '../views/Fifth.vue'
+import Sixth from '../views/Sixth.vue'
+import Seventh from '../views/Seventh.vue'
+import Eighth from '../views/Eighth.vue'
+
 
 Vue.use(VueRouter)
 
@@ -26,9 +31,29 @@ const routes = [
     component: Third
   },
   {
-    path: '/Forth',
+    path: '/forth',
     name: 'Forth',
     component: Forth
+  },
+  {
+    path: '/fifth',
+    name: 'Fifth',
+    component: Fifth
+  },
+  {
+    path: '/sixth',
+    name: 'Sixth',
+    component: Sixth
+  },
+  {
+    path: '/seventh',
+    name: 'Seventh',
+    component: Seventh
+  },
+  {
+    path: '/eighth',
+    name: 'Eighth',
+    component: Eighth
   }
 ]
 

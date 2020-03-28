@@ -5,6 +5,10 @@
       <router-link to="/body">Body</router-link> |
       <router-link to="/third">Third</router-link> |
       <router-link to="/forth">Forth</router-link> |
+      <router-link to="/fifth">Fifth</router-link> |
+      <router-link to="/sixth">Sixth</router-link> |
+      <router-link to="/seventh">Seventh</router-link> |
+      <router-link to="/eighth">Eighth</router-link>
     </div>
     <router-view/>
   </div>
