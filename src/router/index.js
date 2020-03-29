@@ -7,6 +7,8 @@ import Fifth from '../views/Fifth.vue'
 import Sixth from '../views/Sixth.vue'
 import Seventh from '../views/Seventh.vue'
 import Eighth from '../views/Eighth.vue'
+import Ninth from '../views/Ninth.vue'
+import Tenth from '../views/Tenth.vue'
 
 
 Vue.use(VueRouter)
@@ -54,6 +56,16 @@ const routes = [
     path: '/eighth',
     name: 'Eighth',
     component: Eighth
+  },
+  {
+    path: '/ninth',
+    name: 'Ninth',
+    component: Ninth
+  },
+  {
+    path: '/tenth',
+    name: 'Tenth',
+    component: Tenth
   }
 ]
 

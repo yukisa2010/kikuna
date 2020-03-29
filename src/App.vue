@@ -8,7 +8,9 @@
       <router-link to="/fifth">Fifth</router-link> |
       <router-link to="/sixth">Sixth</router-link> |
       <router-link to="/seventh">Seventh</router-link> |
-      <router-link to="/eighth">Eighth</router-link>
+      <router-link to="/eighth">Eighth</router-link> |
+      <router-link to="/ninth">Ninth</router-link> |
+      <router-link to="/tenth">Tenth</router-link>
     </div>
     <router-view/>
   </div>
