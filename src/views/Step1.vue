@@ -26,6 +26,10 @@
         <input type="text"/>
       </div>
       <h2>ＡＤＬ等</h2>
+
+
+
+
       <label>寝返り</label>				
       <select name="negaeri">
         <option v-for="item in items" :key="item">{{item}}</option>

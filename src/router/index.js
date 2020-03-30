@@ -1,14 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import Third from '../views/Third.vue'
-import Forth from '../views/Forth.vue'
-import Fifth from '../views/Fifth.vue'
-import Sixth from '../views/Sixth.vue'
-import Seventh from '../views/Seventh.vue'
-import Eighth from '../views/Eighth.vue'
-import Ninth from '../views/Ninth.vue'
-import Tenth from '../views/Tenth.vue'
+import Step1 from '../views/Step1.vue'
+import Step2 from '../views/Step2.vue'
+import Step3 from '../views/Step3.vue'
+import Step4 from '../views/Step4.vue'
+import Step5 from '../views/Step5.vue'
+import Step6 from '../views/Step6.vue'
+import Step7 from '../views/Step7.vue'
+import Step8 from '../views/Step8.vue'
+import Step9 from '../views/Step9.vue'
+import Step10 from '../views/Step10.vue'
 
 
 Vue.use(VueRouter)
@@ -16,56 +17,53 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Step1',
+    component: Step1
   },
   {
-    path: '/body',
-    name: 'Body',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Body.vue')
+    path: '/Step2',
+    name: 'Step2',
+    component: Step2
   },
   {
-    path: '/third',
-    name: 'Third',
-    component: Third
+    path: '/Step3',
+    name: 'Step3',
+    component: Step3
   },
   {
-    path: '/forth',
-    name: 'Forth',
-    component: Forth
+    path: '/Step4',
+    name: 'Step4',
+    component: Step4
   },
   {
-    path: '/fifth',
-    name: 'Fifth',
-    component: Fifth
+    path: '/Step5',
+    name: 'Step5',
+    component: Step5
   },
   {
-    path: '/sixth',
-    name: 'Sixth',
-    component: Sixth
+    path: '/Step6',
+    name: 'Step6',
+    component: Step6
   },
   {
-    path: '/seventh',
-    name: 'Seventh',
-    component: Seventh
+    path: '/Step7',
+    name: 'Step7',
+    component: Step7
   },
   {
-    path: '/eighth',
-    name: 'Eighth',
-    component: Eighth
+    path: '/Step8',
+    name: 'Step8',
+    component: Step8
   },
   {
-    path: '/ninth',
-    name: 'Ninth',
-    component: Ninth
+    path: '/Step9',
+    name: 'Step9',
+    component: Step9
   },
   {
-    path: '/tenth',
-    name: 'Tenth',
-    component: Tenth
+    path: '/Step10',
+    name: 'Step10',
+    component: Step10
   }
 ]
 

@@ -1,16 +1,16 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/body">Body</router-link> |
-      <router-link to="/third">Third</router-link> |
-      <router-link to="/forth">Forth</router-link> |
-      <router-link to="/fifth">Fifth</router-link> |
-      <router-link to="/sixth">Sixth</router-link> |
-      <router-link to="/seventh">Seventh</router-link> |
-      <router-link to="/eighth">Eighth</router-link> |
-      <router-link to="/ninth">Ninth</router-link> |
-      <router-link to="/tenth">Tenth</router-link>
+      <router-link to="/">Step1</router-link> |
+      <router-link to="/Step2">Step2</router-link> |
+      <router-link to="/Step3">Step3</router-link> |
+      <router-link to="/Step4">Step4</router-link> |
+      <router-link to="/Step5">Step5</router-link> |
+      <router-link to="/Step6">Step6</router-link> |
+      <router-link to="/Step7">Step7</router-link> |
+      <router-link to="/Step8">Step8</router-link> |
+      <router-link to="/Step9">Step9</router-link> |
+      <router-link to="/Step10">Step10</router-link>
     </div>
     <router-view/>
   </div>
