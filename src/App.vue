@@ -13,6 +13,8 @@
       <router-link to="/Step10">Step10</router-link>
     </div>
     <router-view/>
+    <button>Back</button>
+    <button>Next</button>
   </div>
 </template>
 
