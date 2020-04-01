@@ -30,9 +30,9 @@
         <tr>
           <th>特記事項</th>
           <td><textarea cols="30" rows="10"></textarea></td>
+          <code></code>
         </tr>
       </table>
-
     </form>
   </div>
 </template>
