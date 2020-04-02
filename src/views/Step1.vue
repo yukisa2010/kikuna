@@ -1,10 +1,11 @@
 <template>
   <div class="home">
+    <p>{{ test }}</p>
     <form>
       <table>
         <tr v-for="item in items1" :key="item">
           <th>{{ item }}</th>
-          <td><input type="text" /></td>
+          <td><input type="text" :name="item"/></td>
         </tr>
       </table>
 
@@ -43,6 +44,11 @@
 
 export default {
   name: 'Home',
+  computed: {
+    test: function() {
+      return this.$store.state.test
+    }
+  },
   data: function(){
       return {
         items1: [
