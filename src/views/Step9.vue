@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>ROM</h1>
+    <label>患者名：</label><input type="text" v-model="clientName"/><br/><br/>
     <table border="1" style="border-collapse:collapse">
       <tr>
         <th>運動方向</th>
@@ -9,8 +10,8 @@
       </tr>
       <tr v-for="content in contents1" :key="content">
         <th>{{content.title}}</th>
-        <td>{{content.left}}<button>+</button><button>-</button></td>
-        <td>{{content.right}}<button>+</button><button>-</button></td>
+        <td>{{content.left}}<button @click="content.left++">+</button><button @click="content.left--">-</button></td>
+        <td>{{content.right}}<button @click="content.right++">+</button><button @click="content.right--">-</button></td>
       </tr>
     </table>
     <table border="1" style="border-collapse:collapse">
@@ -21,8 +22,8 @@
       </tr>
       <tr v-for="content in contents2" :key="content">
         <th>{{content.title}}</th>
-        <td>{{content.left}}<button>+</button><button>-</button></td>
-        <td>{{content.right}}<button>+</button><button>-</button></td>
+        <td>{{content.left}}<button @click="content.left++">+</button><button @click="content.left--">-</button></td>
+        <td>{{content.right}}<button @click="content.right++">+</button><button @click="content.right--">-</button></td>
       </tr>
     </table>
     <table border="1" style="border-collapse:collapse">
@@ -33,8 +34,8 @@
       </tr>
       <tr v-for="content in contents3" :key="content">
         <th>{{content.title}}</th>
-        <td>{{content.left}}<button>+</button><button>-</button></td>
-        <td>{{content.right}}<button>+</button><button>-</button></td>
+        <td>{{content.left}}<button @click="content.left++">+</button><button @click="content.left--">-</button></td>
+        <td>{{content.right}}<button @click="content.right++">+</button><button @click="content.right--">-</button></td>
       </tr>
     </table>
     <table border="1" style="border-collapse:collapse">
@@ -45,8 +46,8 @@
       </tr>
       <tr v-for="content in contents4" :key="content">
         <th>{{content.title}}</th>
-        <td>{{content.left}}<button>+</button><button>-</button></td>
-        <td>{{content.right}}<button>+</button><button>-</button></td>
+        <td>{{content.left}}<button @click="content.left++">+</button><button @click="content.left--">-</button></td>
+        <td>{{content.right}}<button @click="content.right++">+</button><button @click="content.right--">-</button></td>
       </tr>
     </table>
     <table border="1" style="border-collapse:collapse">
@@ -57,8 +58,8 @@
       </tr>
       <tr v-for="content in contents5" :key="content">
         <th>{{content.title}}</th>
-        <td>{{content.left}}<button>+</button><button>-</button></td>
-        <td>{{content.right}}<button>+</button><button>-</button></td>
+        <td>{{content.left}}<button @click="content.left++">+</button><button @click="content.left--">-</button></td>
+        <td>{{content.right}}<button @click="content.right++">+</button><button @click="content.right--">-</button></td>
       </tr>
     </table>
     <table border="1" style="border-collapse:collapse">
@@ -69,14 +70,25 @@
       </tr>
       <tr v-for="content in contents6" :key="content">
         <th>{{content.title}}</th>
-        <td>{{content.left}}<button>+</button><button>-</button></td>
-        <td>{{content.right}}<button>+</button><button>-</button></td>
+        <td>{{content.left}}<button @click="content.left++">+</button><button @click="content.left--">-</button></td>
+        <td>{{content.right}}<button @click="content.right++">+</button><button @click="content.right--">-</button></td>
       </tr>
     </table>
-
+    <button @click="insertRowByAxios">Submit</button>
   </div>
 </template>
 <script>
+
+// fetch('https://sheetdb.io/api/v1/idwa6d315t92r', { 
+//   mode: 'cors'
+//   })
+//   .then(function(res){
+//     console.log(res.json())
+//   })
+import SheetDB from 'sheetdb-js'
+
+
+
 export default {
   data: function() {
     return {
@@ -122,6 +134,56 @@ export default {
         { title: '外転(10)', left: 10, right: 10 },
         { title: '内転(20)', left: 20, right: 20 }
       ],
+      clientName: ''
+    }
+  },
+  methods: {
+    getByAxios() {
+      this.axios.get('https://sheetdb.io/api/v1/idwa6d315t92r')
+      .then(function(res) {
+        console.log(res.data)
+      })
+    },
+    showData() {
+      console.log(this.contents1)
+    },
+    insertRowByAxios() {
+      const self = this
+      const namae = this.clientName
+      const params = [
+        { index : 'contents1', category: '肩' },
+        { index : 'contents2', category: '肘' },
+        { index : 'contents3', category: '手首' },
+        { index : 'contents4', category: '関節' },
+        { index : 'contents5', category: '膝' },
+        { index : 'contents6', category: '足首' }
+      ]
+      let tableData = [];
+      params.forEach(function(param) {
+        const index = param.index
+        const assignedValue = { name: namae, category: param.category }
+
+        const obj = self[index].map(el => {
+          const newEl = Object.assign(el, assignedValue)
+          return newEl
+        })
+
+        tableData.push(...obj)
+      })
+
+      const json = JSON.stringify(tableData)
+
+console.log(json)
+
+SheetDB.write('https://sheetdb.io/api/v1/idwa6d315t92r', {
+  data: json
+  })
+  .then(function(result){
+  console.log(result);
+  }, function(error){
+    console.log(error);
+  });
+      
     }
   }
 }
