@@ -1,20 +1,20 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Step1</router-link> |
+      <!-- <router-link to="/">Step1</router-link> |
       <router-link to="/Step2">Step2</router-link> |
       <router-link to="/Step3">Step3</router-link> |
       <router-link to="/Step4">Step4</router-link> |
       <router-link to="/Step5">Step5</router-link> |
       <router-link to="/Step6">Step6</router-link> |
       <router-link to="/Step7">Step7</router-link> |
-      <router-link to="/Step8">Step8</router-link> |
+      <router-link to="/Step8">Step8</router-link> | -->
       <router-link to="/Step9">Step9</router-link> |
-      <router-link to="/Step10">Step10</router-link>
+      <!-- <router-link to="/Step10">Step10</router-link> -->
     </div>
     <router-view/>
-    <button>Back</button>
-    <button>Next</button>
+    <!-- <button>Back</button>
+    <button>Next</button> -->
   </div>
 </template>
 
